@@ -1,0 +1,6 @@
+Funções do sistema:
+    Entrada e saida de produtos.
+    consultar estoque.
+        
+
+

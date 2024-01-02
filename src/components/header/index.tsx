@@ -1,37 +1,19 @@
-import { Container,Logo,Menu,MenuLink} from "./style";
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import { menuOption } from "../../vars/vars";
+import { Container,Logo } from "./style";
+import { MenuDesktop } from "../menu/desktop";
+import MenuMobile from "../menu/mobile";
+
 
 const Header = () => {
     
-    const[options,setOptions] = useState(menuOption); 
-
-    const ActionBoton = (index:number) => {
-        const tempArray = [...options];
-        tempArray.map((item)=>{
-            if(item.index == index){
-                item.active = true;
-            }else{
-                item.active = false;
-            }
-        })
-        setOptions(tempArray);
-    }
+   
 
     return(
         <Container>
             <Logo>
                 Logo
             </Logo>
-            <Menu>
-               {options.map((item)=>(
-                    <MenuLink active={item.active} onClick={()=>ActionBoton(item.index)} >
-                        <Link to={item.link}>{item.title}</Link>
-                    </MenuLink>
-                ))}
-            </Menu>
-            
+            <MenuDesktop/>
+            <MenuMobile/>
         </Container>
     )
 }

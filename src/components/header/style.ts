@@ -16,6 +16,7 @@ export const Logo = styled.div`
     width: 50px;
     height: 50px;
     background-color: royalblue;
+   
     border-radius: 50%;
     font-weight: 900;
     display:flex;
@@ -23,6 +24,9 @@ export const Logo = styled.div`
     align-items: center;
     color:#fff;
     cursor: pointer;
+    a{
+        text-decoration: none;
+    }
     &:hover{
         transform: scale(1.1);
         transition: 500ms;

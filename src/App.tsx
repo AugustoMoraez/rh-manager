@@ -4,6 +4,7 @@ import { Route,Routes } from "react-router-dom";
 import  Header  from "./components/header";
 //paginas
 import { WellcomePage } from "./routes/wellcome";
+import { LoginPage } from "./routes/auth/login";
 
 function App() {
   
@@ -13,6 +14,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path="/" element={<WellcomePage/>}/>  
+        <Route path="/autenticar/login" element={<LoginPage/>}/>  
       </Routes>
     </>
     

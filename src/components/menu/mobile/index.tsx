@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Container,Menu,MenuOption } from "./style";
+import { menuOption } from "../../../vars/vars";
 import { TiThMenu } from "react-icons/ti";
 import { useState } from "react";
 
@@ -10,15 +11,13 @@ const MenuMobile = () => {
         <Container>
             <TiThMenu onClick={()=>setToggle(!toggle)} />
             <Menu toggle={toggle}>
-                <MenuOption>
-                    <Link to={"/servicos"}>Serviços</Link>
-                </MenuOption>
-                <MenuOption>
-                    <Link to={"/suporte"}>Suporte</Link>
-                </MenuOption>
-                <MenuOption>
-                    <Link to={"/autenticar"}>Acessar</Link>
-                </MenuOption>
+                {
+                    menuOption.map((option)=>(
+                        <MenuOption>
+                            <Link to={option.link}>{option.title}</Link>
+                        </MenuOption>
+                    ))
+                }
             </Menu>
         </Container>
     )
